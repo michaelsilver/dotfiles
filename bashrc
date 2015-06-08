@@ -64,15 +64,9 @@ alias fuck='$(thefuck $(fc -ln -1))'
 #aliases for os x applications
 alias first='open /Applications/FirstClass.app/'
 alias fire='open /Applications/Firefox.app/'
-alias msw='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app/'
-alias ppt='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ PowerPoint.app/'
-alias xls='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app/'
 alias subl='open -a /Applications/Sublime\ Text\ 2.app'
 alias e='open -a /Applications/Emacs.app/'
 alias skm='open -a /Applications/Skim.app/'
-
-# aliases for ssh
-alias bb='ssh ubuntu@246overclocked.dyndns.org' # beaglebone black
 
 # some other things:
 if [ -f ~/.silver ] ; then
