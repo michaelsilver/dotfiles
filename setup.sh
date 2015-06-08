@@ -4,6 +4,7 @@
 # This script creates symlinks from the home directory to dotfiles specified in dotlist
 ############################
 
+dir=~/dotfiles
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 # create dotfiles_old in homedir
@@ -15,8 +16,8 @@ echo "...done"
 createsymlinks () {
     echo "Moving pre-existing .$1 from ~ to $olddir for safekeeping"
     mv ~/.$1 ~/dotfiles_old/
-    echo "Creating symlink from git-controlled $1 to home directory."
-    ln -s ./$1 ~/.$1
+    echo "Creating symlink from git-controlled .$1 to home directory."
+    ln -s $dir/$1 ~/.$1
 }
 
 # either use all listed in dotlist, or specified in arg list
@@ -25,7 +26,7 @@ then
     while read name
     do
 	createsymlinks "$name"
-    done < ./dotlist
+    done < $dir/dotlist
 else
     for arg; do
 	createsymlinks "$arg"
