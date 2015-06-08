@@ -28,3 +28,6 @@ And there you go, up on GitHub. Note `addfile` can take any number of filenames,
 ./addfile.sh emacs bashrc vimrc  # acts on all three
 ```
 To install your dotfiles on another machine, follow the instructions under "To install my settings" only cloning and using your fork of the repo rather than mine.
+
+## Credits
+Install script roughly based on this [tutorial](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). `bashrc` based on [Amit Bansil's](https://github.com/amit-bansil)
