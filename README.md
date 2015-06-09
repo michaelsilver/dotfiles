@@ -7,9 +7,21 @@ cd ~/dotfiles
 ```
 
 ## To install my settings:
+Regardless of what dotfiles you choose to install, your old versions will be automatically moved to `~/dotfiles-old`
+
+To install all my dotfiles:
 ```Bash
 chmod +x ./setup.sh
 ./setup.sh
+```
+
+To install select dotfiles:
+```
+./setup.sh <dotfile1> <dotfile2> <...>
+```
+Ex: want to install emacs & bashrc?
+```
+./setup.sh emacs bashrc
 ```
 
 ## To use my framework:
