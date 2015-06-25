@@ -53,7 +53,8 @@ alias du="du -h"
 alias df="df -h"
 
 # aliases to shorten paths
-alias b='cd ~/Documents/Dropbox/Education/BUA/11th/2nd-semester'
+# alias b='cd ~/Documents/Dropbox/Education/BUA/11th/2nd-semester'
+alias b='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/College'
 alias gh='cd ~/Documents/GitHub/'
 
 # Useful tricks:
