@@ -117,3 +117,4 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
