@@ -1,3 +1,5 @@
+(x-focus-frame nil)
+
 ;; key bindings
 (when (eq system-type 'darwin) ;; mac specific settings
   (setq mac-option-modifier 'alt)
