@@ -41,5 +41,12 @@ And there you go, up on GitHub. Note `addfile` can take any number of filenames,
 ```
 To install your dotfiles on another machine, follow the instructions under "To install my settings" only cloning and using your fork of the repo rather than mine.
 
+## Add-ons
+To install Git-Autocomplete:
+```Bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+```
+My `.bashrc` automatically sees this file, and upon refresh of the prompt, you can begin enjoying git-autocompletion. Cudos to [Code Worrier](http://code-worrier.com/blog/autocomplete-git/) for the instructions.
+
 ## Credits
 Install script roughly based on this [tutorial](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). `bashrc` based on [Amit Bansil's](https://github.com/amit-bansil)
