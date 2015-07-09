@@ -49,4 +49,6 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 My `.bashrc` automatically sees this file, and upon refresh of the prompt, you can begin enjoying git-autocompletion. Cudos to [Code Worrier](http://code-worrier.com/blog/autocomplete-git/) for the instructions.
 
 ## Credits
-Install script roughly based on this [tutorial](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). `bashrc` based on [Amit Bansil's](https://github.com/amit-bansil)
+Install script roughly based on this [tutorial](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). `bashrc` based on [Amit Bansil's](https://github.com/amit-bansil).
+
+Also, thank you to [Geoff Greer](https://github.com/ggreer) for his useful [LSCOLORS Generator](http://geoff.greer.fm/lscolors/).
