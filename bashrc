@@ -48,7 +48,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
-    export LS_COLORS="di=33;40:ln=32;40:so=31;1;40:pi=31;1;40:ex=35;40:bd=36;40:cd=36;1;40:su=35;1;40:sg=35;1;40:tw=33;1;40:ow=33;1;40:"
+    export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
     alias ls="ls --color=auto"
 fi
 
