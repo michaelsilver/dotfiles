@@ -24,10 +24,19 @@ if [ "$(uname)" == "Darwin" ]; then
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
 
-    # Setting PATH for Python 2.7
-    # The orginal version is saved in .bash_profile.pysave
-    PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-    export PATH
+    # set where virutal environments will live
+    export WORKON_HOME=$HOME/.virtualenvs
+    # ensure all new environments are isolated from the site-packages directory
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+    # use the same directory for virtualenvs as virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    # makes pip detect an active virtualenv and install to it
+    export PIP_RESPECT_VIRTUALENV=true
+    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+    else
+        echo "WARNING: Can't find virtualenvwrapper.sh"
+    fi
 
     #eject all conneted volumes:
     function eject_all
@@ -98,7 +107,9 @@ shopt -s > /dev/null
 export HISTCONTROL="ignoredups"
 # Ignore some controlling instructions
 export HISTIGNORE="[   ]*:&:bg:fg:exit"
-export PATH=/usr/local/bin:$PATH
+
+# PATH for brew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Git Auto-complete 
 if [ -f ~/.git-completion.bash ]; then
