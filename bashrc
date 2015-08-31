@@ -10,7 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ls="ls -G"
 
     # aliases to shorten paths
-    # alias b='cd ~/Documents/Dropbox/Education/BUA/11th/2nd-semester'
+    alias h='cd ~'
     alias b='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/12th'
     alias c='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/College'
     alias gh='cd ~/Documents/GitHub/'
