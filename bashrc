@@ -56,6 +56,12 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
     # Finished adapting your PATH environment variable for use with MacPorts.
 
+    # PATH for brew
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+    # brew autocompletion
+    source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
@@ -108,9 +114,6 @@ shopt -s > /dev/null
 export HISTCONTROL="ignoredups"
 # Ignore some controlling instructions
 export HISTIGNORE="[   ]*:&:bg:fg:exit"
-
-# PATH for brew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Git Auto-complete 
 if [ -f ~/.git-completion.bash ]; then
