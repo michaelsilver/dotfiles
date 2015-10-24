@@ -20,7 +20,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias jd='fire ~/sunspotfrcsdk/doc/javadoc/index.html'
 
     #aliases for os x applications
-    alias fire='open /Applications/Firefox.app/'
+    alias chrome='open /Applications/Google\ Chrome.app/'
     alias subl='open -a /Applications/Sublime\ Text\ 2.app'
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
