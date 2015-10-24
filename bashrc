@@ -106,3 +106,11 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+export WORKON_HOME=/scratch/msilver/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
+
+# get common InfoLab settings:
+source ~start/common-bashrc
+#THIS COMMENT LINE IS IMPORTANT - make sure to copy this too
