@@ -107,6 +107,7 @@ fi
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+# Python virtualenv
 export WORKON_HOME=/scratch/msilver/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
