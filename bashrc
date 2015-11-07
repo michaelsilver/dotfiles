@@ -17,7 +17,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # Useful tricks:
     alias d='mv ~/Downloads/* ./'
-    alias jd='fire ~/sunspotfrcsdk/doc/javadoc/index.html'
+    alias jd='chrome ~/wpilib/java/current/javadoc/index.html'
 
     #aliases for os x applications
     alias chrome='open /Applications/Google\ Chrome.app/'
