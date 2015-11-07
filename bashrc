@@ -11,8 +11,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # aliases to shorten paths
     alias h='cd ~'
-    alias b='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/12th'
-    alias c='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/College'
     alias gh='cd ~/Documents/GitHub/'
 
     # Useful tricks:
@@ -47,10 +45,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # Homebrew Cask defaults in this environment variable
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-    ##
-    # Your previous /Users/michaelsilver/.bash_profile file was backed up as /Users/michaelsilver/.bash_profile.macports-saved_2015-01-26_at_12:29:17
-    ##
 
     # MacPorts Installer addition on 2015-01-26_at_12:29:17: adding an appropriate PATH variable for use with MacPorts.
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
