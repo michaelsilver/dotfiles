@@ -1,4 +1,5 @@
 # Dotfiles
+![Alt text](/img/terminal.png?raw=true "Terminal Screenshot")
 
 ## Get Ready
 ```Bash
