@@ -10,7 +10,6 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ls="ls -G"
 
     # aliases to shorten paths
-    alias h='cd ~'
     alias gh='cd ~/Documents/GitHub/'
 
     # Useful tricks:
