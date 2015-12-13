@@ -36,6 +36,13 @@ if [ "$(uname)" == "Darwin" ]; then
         echo "WARNING: Can't find virtualenvwrapper.sh"
     fi
 
+    # Ex:  make; growl "make finished"
+    # sends a notification center alert to remind you
+    # requires: brew install terminal-notifier
+    function growl() {
+	terminal-notifier -activate com.googlecode.iterm2 -message "$@"
+    }
+
     #eject all conneted volumes:
     function eject_all
     {
