@@ -10,24 +10,38 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ls="ls -G"
 
     # aliases to shorten paths
-    # alias b='cd ~/Documents/Dropbox/Education/BUA/11th/2nd-semester'
-    alias b='cd /Users/michaelsilver/Documents/Dropbox/Education/BUA/College'
     alias gh='cd ~/Documents/GitHub/'
 
     # Useful tricks:
     alias d='mv ~/Downloads/* ./'
-    alias jd='fire ~/sunspotfrcsdk/doc/javadoc/index.html'
+    alias jd='chrome ~/wpilib/java/current/javadoc/index.html'
 
     #aliases for os x applications
-    alias fire='open /Applications/Firefox.app/'
+    alias chrome='open /Applications/Google\ Chrome.app/'
     alias subl='open -a /Applications/Sublime\ Text\ 2.app'
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
 
-    # Setting PATH for Python 2.7
-    # The orginal version is saved in .bash_profile.pysave
-    PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-    export PATH
+    # set where virutal environments will live
+    export WORKON_HOME=$HOME/.virtualenvs
+    # ensure all new environments are isolated from the site-packages directory
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+    # use the same directory for virtualenvs as virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    # makes pip detect an active virtualenv and install to it
+    export PIP_RESPECT_VIRTUALENV=true
+    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+    else
+        echo "WARNING: Can't find virtualenvwrapper.sh"
+    fi
+
+    # Ex:  make; growl "make finished"
+    # sends a notification center alert to remind you
+    # requires: brew install terminal-notifier
+    function growl() {
+	terminal-notifier -activate com.googlecode.iterm2 -message "$@"
+    }
 
     #eject all conneted volumes:
     function eject_all
@@ -38,13 +52,15 @@ if [ "$(uname)" == "Darwin" ]; then
     # Homebrew Cask defaults in this environment variable
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-    ##
-    # Your previous /Users/michaelsilver/.bash_profile file was backed up as /Users/michaelsilver/.bash_profile.macports-saved_2015-01-26_at_12:29:17
-    ##
-
     # MacPorts Installer addition on 2015-01-26_at_12:29:17: adding an appropriate PATH variable for use with MacPorts.
     export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
     # Finished adapting your PATH environment variable for use with MacPorts.
+
+    # PATH for brew
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+    # brew autocompletion
+    source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
@@ -98,7 +114,6 @@ shopt -s > /dev/null
 export HISTCONTROL="ignoredups"
 # Ignore some controlling instructions
 export HISTIGNORE="[   ]*:&:bg:fg:exit"
-export PATH=/usr/local/bin:$PATH
 
 # Git Auto-complete 
 if [ -f ~/.git-completion.bash ]; then
