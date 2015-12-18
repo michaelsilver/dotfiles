@@ -98,11 +98,6 @@ alias cp="cp -i"
 alias du="du -h"
 alias df="df -h"
 
-# some other things:
-if [ -f ~/.silver ] ; then
-    source ~/.silver
-fi
-
 # Use case-insensitive filename globbing
 shopt -s nocaseglob > /dev/null
 # Make bash append rather than overwrite the history on disk
@@ -122,11 +117,7 @@ fi
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-# Python virtualenv
-export WORKON_HOME=/scratch/msilver/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
-
-# get common InfoLab settings:
-source ~start/common-bashrc
-#THIS COMMENT LINE IS IMPORTANT - make sure to copy this too
+# some other things:
+if [ -f ~/.silver ] ; then
+    source ~/.silver
+fi
