@@ -66,6 +66,28 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
     alias ls="ls --color=auto"
+
+    SSH_ENV=$HOME/.ssh/environment
+
+    # start the ssh-agent
+    function start_agent {
+	echo "Initializing new SSH agent..."
+	# spawn ssh-agent
+	/usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
+	echo succeeded
+	chmod 600 ${SSH_ENV}
+	. ${SSH_ENV} > /dev/null
+	/usr/bin/ssh-add
+    }
+
+    if [ -f "${SSH_ENV}" ]; then
+	. ${SSH_ENV} > /dev/null
+	ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+            start_agent;
+	}
+    else
+	start_agent;
+    fi
 fi
 
 bind "set completion-ignore-case on"
