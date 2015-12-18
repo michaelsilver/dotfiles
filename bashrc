@@ -98,11 +98,6 @@ alias cp="cp -i"
 alias du="du -h"
 alias df="df -h"
 
-# some other things:
-if [ -f ~/.silver ] ; then
-    source ~/.silver
-fi
-
 # Use case-insensitive filename globbing
 shopt -s nocaseglob > /dev/null
 # Make bash append rather than overwrite the history on disk
@@ -121,3 +116,8 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# some other things:
+if [ -f ~/.silver ] ; then
+    source ~/.silver
+fi
