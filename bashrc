@@ -110,7 +110,7 @@ else
 fi
 
 # setup
-export EDITOR=ec
+export EDITOR=emacs
 
 # aliases to humanize bash
 alias ll="ls -hal"
