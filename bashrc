@@ -100,8 +100,16 @@ CYAN='\[\033[0;36m\]'
 PLAIN='\[\033[00m\]'
 RED='\[\033[0;31m\]'
 BLUE='\[\033[0;34m\]'
+MAGENTA='\[\033[0;35m\]'
 
-PS1="\u@$BLUE\h$CYAN:\w$PLAIN$ "
+# Git Prompt
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    PS1="\u@$BLUE\h$CYAN:\w\[\033[m\]$MAGENTA\$(__git_ps1)$PLAIN$ "
+else
+    PS1="\u@$BLUE\h$CYAN:\w$PLAIN$ "
+fi
+
 #make host red for root
 if [ "$EUID" == 0 ]; then
     export PS1=$RED$PS1
@@ -132,7 +140,7 @@ export HISTCONTROL="ignoredups"
 # Ignore some controlling instructions
 export HISTIGNORE="[   ]*:&:bg:fg:exit"
 
-# Git Auto-complete 
+# Git Auto-complete
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
