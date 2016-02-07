@@ -143,3 +143,6 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 if [ -f ~/.silver ] ; then
     source ~/.silver
 fi
+
+# added by travis gem
+[ -f /Users/michaelsilver/.travis/travis.sh ] && source /Users/michaelsilver/.travis/travis.sh
