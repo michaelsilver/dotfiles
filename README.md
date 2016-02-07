@@ -47,7 +47,11 @@ To install Git-Autocomplete:
 ```Bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 ```
-My `.bashrc` automatically sees this file, and upon refresh of the prompt, you can begin enjoying git-autocompletion. Cudos to [Code Worrier](http://code-worrier.com/blog/autocomplete-git/) for the instructions.
+To intall extention to show the current Git Branch:
+```Bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+```
+My `.bashrc` automatically sees these files, and upon refresh of the prompt, you can begin enjoying these features. Cudos to Code Worrier for the instructions ([autocompletion](http://code-worrier.com/blog/autocomplete-git/)) ([git branch](http://code-worrier.com/blog/git-branch-in-bash-prompt/)).
 
 ## Credits
 Install script roughly based on this [tutorial](http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/). `bashrc` based on [Amit Bansil's](https://github.com/amit-bansil).
