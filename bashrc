@@ -22,19 +22,9 @@ if [ "$(uname)" == "Darwin" ]; then
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
 
+    # Python virtualenv
     # set where virutal environments will live
     export WORKON_HOME=$HOME/.virtualenvs
-    # ensure all new environments are isolated from the site-packages directory
-    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-    # use the same directory for virtualenvs as virtualenvwrapper
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    # makes pip detect an active virtualenv and install to it
-    export PIP_RESPECT_VIRTUALENV=true
-    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-        source /usr/local/bin/virtualenvwrapper.sh
-    else
-        echo "WARNING: Can't find virtualenvwrapper.sh"
-    fi
 
     # Ex:  make; growl "make finished"
     # sends a notification center alert to remind you
@@ -68,6 +58,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     alias ls="ls --color=auto"
 
     SSH_ENV=$HOME/.ssh/environment
+
+    # Python virtualenv location set in ~/.silver
 
     # start the ssh-agent
     function start_agent {
@@ -152,5 +144,22 @@ if [ -f ~/.silver ] ; then
     source ~/.silver
 fi
 
+# Python virtualenvs
+# ensure all new environments are isolated from the site-packages directory
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+# use the same directory for virtualenvs as virtualenvwrapper
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# makes pip detect an active virtualenv and install to it
+export PIP_RESPECT_VIRTUALENV=true
+if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "WARNING: Can't find virtualenvwrapper.sh"
+fi
+
 # added by travis gem
 [ -f /Users/michaelsilver/.travis/travis.sh ] && source /Users/michaelsilver/.travis/travis.sh
+
+# get common InfoLab settings:
+[ -f ~start/common-bashrc ] && source ~start/common-bashrc
+#THIS COMMENT LINE IS IMPORTANT - make sure to copy this too
