@@ -205,9 +205,11 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 521}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -232,15 +234,17 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>469 333 924 485 0 0 1920 1177 </string>
+	<string>247 203 924 485 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>86 279 890 498 0 0 1280 777 </string>
+	<string>470 658 890 498 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>695 252 890 498 0 0 1920 1177 </string>
+	<string>0 453 890 498 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>296 123 690 386 0 0 1280 777 </string>
+	<string>116 131 890 498 0 0 1920 1177 </string>
+	<key>NeverWarnAboutShortLivedSessions_3B30536A-50B3-4AFD-8664-CA1EA07DAF7A</key>
+	<true/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -955,10 +959,12 @@
 			<string>/Users/michaelsilver</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>455234643.77615499</real>
+	<real>477938198.46332502</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>470599238.544025</real>
+	<real>482078459.16022402</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -1023,7 +1029,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-01T03:19:52Z</date>
+	<date>2016-04-11T14:10:37Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
