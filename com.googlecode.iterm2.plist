@@ -239,10 +239,15 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 139 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 4 960 1053 0 0 1920 1057 </string>
+	<string>931 511 890 498 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>781 559 890 498 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -942,7 +947,18 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array/>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>^Password:</string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -970,7 +986,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>9759BD29-A421-4047-A6A7-E72EB6DDB4AB</string>
 	<key>NoSyncLastTipTime</key>
-	<real>486871890.58262002</real>
+	<real>486873973.94091898</real>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486871148.755063</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -1031,6 +1047,10 @@
 		<string>0000</string>
 		<string>0001</string>
 		<string>0000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0002</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
