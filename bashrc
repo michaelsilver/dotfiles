@@ -144,6 +144,9 @@ if [ -f ~/.silver ] ; then
     source ~/.silver
 fi
 
+# iTerm Shell Integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 # Python virtualenvs
 # ensure all new environments are isolated from the site-packages directory
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
