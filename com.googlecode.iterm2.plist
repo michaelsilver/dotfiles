@@ -69,6 +69,13 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xd-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
@@ -245,13 +252,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 139 606 456 0 0 1920 1057 </string>
+	<string>96 320 606 456 0 0 1280 777 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>2189 277 606 456 1920 138 1280 778 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>518 566 796 473 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>931 511 890 498 0 0 1920 1057 </string>
+	<string>654 465 954 516 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>781 559 890 498 0 0 1920 1057 </string>
+	<string>135 118 890 498 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>960 4 960 1053 0 0 1920 1057 </string>
+	<string>105 62 770 876 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_3B30536A-50B3-4AFD-8664-CA1EA07DAF7A</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -944,6 +955,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -981,12 +994,18 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>1</integer>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9759BD29-A421-4047-A6A7-E72EB6DDB4AB</string>
 	<key>NoSyncLastTipTime</key>
 	<real>486873973.94091898</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486871148.755063</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -1060,10 +1079,14 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1099,6 +1122,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/michaelsilver/dotfiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -1118,7 +1143,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-06T01:44:54Z</date>
+	<date>2016-12-14T07:01:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1166,6 +1191,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.0</string>
+	<string>3.0.10</string>
 </dict>
 </plist>
