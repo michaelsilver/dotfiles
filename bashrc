@@ -49,10 +49,16 @@ if [ "$(uname)" == "Darwin" ]; then
     # PATH for brew
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+    # Extra scripts
+    export PATH=~/.scripts:$PATH
+
     # brew autocompletion
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
+
+    # CHICKEN Scheme
+    export CHICKEN_REPOSITORY=~/.chickeneggs/lib/chicken/6
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
