@@ -48,6 +48,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # PATH for brew
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
     # Extra scripts
     export PATH=~/.scripts:$PATH
