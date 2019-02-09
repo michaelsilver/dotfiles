@@ -18,7 +18,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     #aliases for os x applications
     alias chrome='open /Applications/Google\ Chrome.app/'
-    alias subl='open -a /Applications/Sublime\ Text\ 2.app'
+    alias subl='open -a /Applications/Sublime\ Text.app'
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
 
@@ -48,9 +48,34 @@ if [ "$(uname)" == "Darwin" ]; then
 
     # PATH for brew
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+    # Extra scripts
+    export PATH=~/.scripts:$PATH
 
     # brew autocompletion
-    source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+
+    # Python virtualenvs
+    # ensure all new environments are isolated from the site-packages directory
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+    # use the same directory for virtualenvs as virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    # makes pip detect an active virtualenv and install to it
+    export PIP_RESPECT_VIRTUALENV=true
+    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+    else
+        echo "WARNING: Can't find virtualenvwrapper.sh"
+    fi
+
+    # CHICKEN Scheme
+    export CHICKEN_REPOSITORY=~/.chickeneggs/lib/chicken/6
+
+    # RiseML
+    export PATH=~/.riseml/bin:$PATH
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
@@ -60,6 +85,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     SSH_ENV=$HOME/.ssh/environment
 
     # Python virtualenv location set in ~/.silver
+    # when creating, set:
+    # export WORKON_HOME=/path/where/you/want/.virtualenvs
+    # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
     # start the ssh-agent
     function start_agent {
@@ -139,6 +167,11 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
+# Minio Client Auto-complete
+if [ -f ~/.mc-completion.bash ]; then
+    . ~/.mc-completion.bash
+fi
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # some other things:
@@ -149,22 +182,15 @@ fi
 # iTerm Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# Python virtualenvs
-# ensure all new environments are isolated from the site-packages directory
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-# use the same directory for virtualenvs as virtualenvwrapper
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-# makes pip detect an active virtualenv and install to it
-export PIP_RESPECT_VIRTUALENV=true
-if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-else
-    echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
-
 # added by travis gem
 [ -f /Users/michaelsilver/.travis/travis.sh ] && source /Users/michaelsilver/.travis/travis.sh
 
 # get common InfoLab settings:
 [ -f ~start/common-bashrc ] && source ~start/common-bashrc
 #THIS COMMENT LINE IS IMPORTANT - make sure to copy this too
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/michaelsilver/google-cloud-sdk/path.bash.inc' ]; then source '/Users/michaelsilver/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc'; fi

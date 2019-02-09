@@ -47,6 +47,21 @@ To install Git-Autocomplete:
 ```Bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 ```
+If you later encounter an error like: 
+```
+Unknown option: --list-cmds=list-mainporcelain,others,nohelpers,alias,list-complete,config
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+```
+Then you probably have an older version of git installed. Remove the `~/.git-completion.bash` file and download an older version of Git-Autocomplete:
+```Bash
+rm ~/.git-completion.bash
+curl https://raw.githubusercontent.com/git/git/v2.17.1/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+```
+
 To intall extention to show the current Git Branch:
 ```Bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
