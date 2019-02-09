@@ -58,6 +58,19 @@ if [ "$(uname)" == "Darwin" ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
 
+    # Python virtualenvs
+    # ensure all new environments are isolated from the site-packages directory
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+    # use the same directory for virtualenvs as virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    # makes pip detect an active virtualenv and install to it
+    export PIP_RESPECT_VIRTUALENV=true
+    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+    else
+        echo "WARNING: Can't find virtualenvwrapper.sh"
+    fi
+
     # CHICKEN Scheme
     export CHICKEN_REPOSITORY=~/.chickeneggs/lib/chicken/6
 
@@ -72,6 +85,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     SSH_ENV=$HOME/.ssh/environment
 
     # Python virtualenv location set in ~/.silver
+    # when creating, set:
+    # export WORKON_HOME=/path/where/you/want/.virtualenvs
+    # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
     # start the ssh-agent
     function start_agent {
@@ -163,19 +179,6 @@ fi
 
 # iTerm Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-# Python virtualenvs
-# ensure all new environments are isolated from the site-packages directory
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-# use the same directory for virtualenvs as virtualenvwrapper
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-# makes pip detect an active virtualenv and install to it
-export PIP_RESPECT_VIRTUALENV=true
-if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-else
-    echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
 
 # added by travis gem
 [ -f /Users/michaelsilver/.travis/travis.sh ] && source /Users/michaelsilver/.travis/travis.sh
