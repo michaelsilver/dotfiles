@@ -92,7 +92,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # start the ssh-agent
     function start_agent {
         echo "Killing old SSH agents..."
-        killall -u msilver ssh-agent
+        killall -u $(whoami) ssh-agent
         echo "Initializing new SSH agent..."
         # spawn ssh-agent
         /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
