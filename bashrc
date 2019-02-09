@@ -30,13 +30,13 @@ if [ "$(uname)" == "Darwin" ]; then
     # sends a notification center alert to remind you
     # requires: brew install terminal-notifier
     function growl() {
-	      terminal-notifier -activate com.googlecode.iterm2 -message "$@"
+        terminal-notifier -activate com.googlecode.iterm2 -message "$@"
     }
 
     #eject all conneted volumes:
     function eject_all
     {
-	      find /Volumes -maxdepth 1 -not -user root -print0 | xargs -0 diskutil eject 
+        find /Volumes -maxdepth 1 -not -user root -print0 | xargs -0 diskutil eject
     }
 
     # Homebrew Cask defaults in this environment variable
@@ -63,22 +63,24 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 
     # start the ssh-agent
     function start_agent {
-	      echo "Initializing new SSH agent..."
-	      # spawn ssh-agent
-	      /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
-	      echo succeeded
-	      chmod 600 ${SSH_ENV}
-	      . ${SSH_ENV} > /dev/null
-	      /usr/bin/ssh-add
+        echo "Killing old SSH agents..."
+        killall -u msilver ssh-agent
+        echo "Initializing new SSH agent..."
+        # spawn ssh-agent
+        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
+        echo succeeded
+        chmod 600 ${SSH_ENV}
+        . ${SSH_ENV} > /dev/null
+        /usr/bin/ssh-add
     }
 
     if [ -f "${SSH_ENV}" ]; then
-	      . ${SSH_ENV} > /dev/null
-	      ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        . ${SSH_ENV} > /dev/null
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
             start_agent;
-	      }
+        }
     else
-	      start_agent;
+        start_agent;
     fi
 fi
 
