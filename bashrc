@@ -1,6 +1,7 @@
 # color
 export TERM="xterm-color"
 alias grep='grep --color'
+alias tmux='tmux -CC'
 
 # ls needs to be setup differently for OSX (BSD) vs. Linux (GNU)
 # Also separating Mac and Linux things
