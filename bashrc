@@ -74,6 +74,11 @@ if [ "$(uname)" == "Darwin" ]; then
     # RiseML
     export PATH=~/.riseml/bin:$PATH
 
+    # Go
+    export GOPATH="${HOME}/.go"
+    export GOROOT="$(brew --prefix)/opt/go/libexec"
+    export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
