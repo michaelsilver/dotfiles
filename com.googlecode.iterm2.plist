@@ -293,11 +293,11 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 17 954 1040 0 0 1920 1057 </string>
+	<string>326 0 954 777 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>670 356 890 500 0 0 1920 1057 </string>
+	<string>288 235 890 500 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>47 126 890 500 0 0 1280 777 </string>
+	<string>3 277 890 500 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_3B30536A-50B3-4AFD-8664-CA1EA07DAF7A</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -1018,6 +1018,16 @@
 					<key>regex</key>
 					<string>.*@*'s password:</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>[Pp]assword for .*:</string>
+				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
@@ -1041,8 +1051,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.4beta1</string>
 		<string>3.3.3beta2</string>
 		<string>3.2.7beta4</string>
+		<string>3.3.5beta1</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -1057,7 +1069,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{182, 701}</string>
+		<string>{181, 701}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
@@ -1068,7 +1080,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>486873973.94091898</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>3</integer>
+	<integer>7</integer>
 	<key>NoSyncNewTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewTabFromTmuxOpensTmux_selection</key>
@@ -1457,7 +1469,23 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.tmuxPaneTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1791,16 +1819,16 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>callq</string>
-		<string>callqd</string>
-		<string>callsq</string>
-		<string>mem_free</string>
-		<string>mem_alloc</string>
-		<string>/sort</string>
-		<string>both-inli</string>
-		<string>copy_i</string>
-		<string>running test</string>
-		<string>sort_i</string>
+		<string>edu.</string>
+		<string>bd_free</string>
+		<string>right</string>
+		<string>bottom</string>
+		<string>nltk</string>
+		<string>2019-02-09</string>
+		<string>updateherok</string>
+		<string>config</string>
+		<string>fastest</string>
+		<string>/usr/local/opt/go/libexec</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486871148.755063</real>
@@ -1939,13 +1967,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-13T00:26:19Z</date>
+	<date>2019-09-28T18:01:40Z</date>
+	<key>SUUpdateRelaunchingMarker</key>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -2005,6 +2035,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.3beta2</string>
+	<string>3.3.5beta1</string>
 </dict>
 </plist>

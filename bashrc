@@ -7,6 +7,8 @@ alias tmux='tmux -CC'
 # Also separating Mac and Linux things
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+
     export LSCOLORS="dxcxbAbAfxgxgAfAfAdAdA"
     alias ls="ls -G"
 
@@ -19,6 +21,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     #aliases for os x applications
     alias chrome='open /Applications/Google\ Chrome.app/'
+    alias fire='open /Applications/Firefox.app/'
     alias subl='open -a /Applications/Sublime\ Text.app'
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
