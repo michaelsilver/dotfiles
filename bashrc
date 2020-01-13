@@ -93,28 +93,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # when creating, set:
     # export WORKON_HOME=/path/where/you/want/.virtualenvs
     # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-
-    # start the ssh-agent
-    function start_agent {
-        echo "Killing old SSH agents..."
-        killall -u $(whoami) ssh-agent
-        echo "Initializing new SSH agent..."
-        # spawn ssh-agent
-        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
-        echo succeeded
-        chmod 600 ${SSH_ENV}
-        . ${SSH_ENV} > /dev/null
-        /usr/bin/ssh-add
-    }
-
-    if [ -f "${SSH_ENV}" ]; then
-        . ${SSH_ENV} > /dev/null
-        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-    else
-        start_agent;
-    fi
 fi
 
 bind "set completion-ignore-case on"
