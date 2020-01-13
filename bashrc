@@ -87,6 +87,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
     alias ls="ls --color=auto"
 
+    # shell completion when using sudo
+    complete -cf sudo
+
     SSH_ENV=$HOME/.ssh/environment
 
     # Python virtualenv location set in ~/.silver
