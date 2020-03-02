@@ -14,6 +14,8 @@
 	<integer>1</integer>
 	<key>AppleFontSmoothing</key>
 	<integer>3</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -287,7 +289,7 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>588 692 616 174 0 0 1792 1097 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
+	<string>586 528 620 392 0 0 1792 1097 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -295,13 +297,13 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>963 0 954 1177 0 0 1920 1177 </string>
+	<string>3459 195 890 1097 2560 195 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>899 594 890 500 0 0 1920 1177 </string>
+	<string>963 0 1190 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>169 399 890 500 0 0 1920 1057 </string>
+	<string>1283 0 1274 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>2148 115 890 500 1920 0 1792 1097 </string>
+	<string>1283 5 1274 698 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>2169 92 890 500 1920 0 1792 1097 </string>
 	<key>NeverWarnAboutShortLivedSessions_3B30536A-50B3-4AFD-8664-CA1EA07DAF7A</key>
@@ -1058,16 +1060,17 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.2.7beta4</string>
-		<string>3.3.5beta1</string>
-		<string>3.3.7beta3</string>
-		<string>3.3.4beta1</string>
-		<string>3.3.8beta4</string>
-		<string>3.3.5beta3</string>
 		<string>3.3.8beta3</string>
+		<string>3.3.7beta3</string>
+		<string>3.3.9beta1</string>
+		<string>3.3.4beta1</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.8beta4</string>
 		<string>3.3.7beta1</string>
 		<string>3.3.5beta2</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.5beta1</string>
 		<string>3.3.3beta2</string>
-		<string>3.3.7beta2</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -1087,7 +1090,7 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{0, 0}, {1792, 1120}}</string>
 		<key>topLeft</key>
 		<string>{269, 595}</string>
 	</dict>
@@ -1100,7 +1103,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>486873973.94091898</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>91</integer>
+	<integer>116</integer>
 	<key>NoSyncNewTabFromTmuxOpensTmux</key>
 	<true/>
 	<key>NoSyncNewTabFromTmuxOpensTmux_selection</key>
@@ -1990,7 +1993,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-07T19:54:37Z</date>
+	<date>2020-02-12T19:44:50Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2058,6 +2061,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta4</string>
+	<string>3.3.9beta1</string>
 </dict>
 </plist>
