@@ -7,6 +7,8 @@ alias tmux='tmux -CC'
 # Also separating Mac and Linux things
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+
     export LSCOLORS="dxcxbAbAfxgxgAfAfAdAdA"
     alias ls="ls -G"
 
@@ -19,6 +21,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
     #aliases for os x applications
     alias chrome='open /Applications/Google\ Chrome.app/'
+    alias fire='open /Applications/Firefox.app/'
     alias subl='open -a /Applications/Sublime\ Text.app'
     alias e='open -a /Applications/Emacs.app/'
     alias skm='open -a /Applications/Skim.app/'
@@ -81,6 +84,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
     alias ls="ls --color=auto"
+
+    # shell completion when using sudo
+    complete -cf sudo
 
     SSH_ENV=$HOME/.ssh/environment
 
