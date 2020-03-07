@@ -75,9 +75,7 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH=~/.riseml/bin:$PATH
 
     # Go
-    export GOPATH="${HOME}/.go"
     export GOROOT="$(brew --prefix)/opt/go/libexec"
-    export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
@@ -91,26 +89,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # export WORKON_HOME=/path/where/you/want/.virtualenvs
     # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
-    # start the ssh-agent
-    function start_agent {
-        echo "Killing old SSH agents..."
-        killall -u $(whoami) ssh-agent
-        echo "Initializing new SSH agent..."
-        # spawn ssh-agent
-        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > ${SSH_ENV}
-        echo succeeded
-        chmod 600 ${SSH_ENV}
-        . ${SSH_ENV} > /dev/null
-        /usr/bin/ssh-add
-    }
-
-    if [ -f "${SSH_ENV}" ]; then
-        . ${SSH_ENV} > /dev/null
-        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-    else
-        start_agent;
+    # Go
+    if command -v go >/dev/null; then
+        export GOROOT=`go env GOROOT`
     fi
 fi
 
@@ -196,3 +177,9 @@ if [ -f '/Users/michaelsilver/google-cloud-sdk/path.bash.inc' ]; then source '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc'; fi
+
+# Go
+if command -v go >/dev/null; then
+    export GOPATH="${HOME}/.go"
+    export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+fi
