@@ -20,7 +20,7 @@ Rxvt*color15:   #feffff
 Rxvt*font: xft:monaco:size=11:antialias=true
 Rxvt*scrollBar: false
 
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,searchable-scrollback
 URxvt.url-launcher: firefox
 URxvt.matcher.button: 1
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
