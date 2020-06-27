@@ -70,3 +70,7 @@ tramp
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# RipGrep #
+###########
+.ignore
