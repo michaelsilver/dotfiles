@@ -1,0 +1,10 @@
+remove  mod1        = Alt_L Alt_R Meta_L
+remove  mod4        = Super_L Super_R Hyper_L
+
+keysym  Alt_L       = Super_L
+keysym  Alt_R       = Super_R
+keysym  Super_L     = Alt_L
+keysym  Super_R     = Alt_R
+
+add     mod1        = Alt_L Alt_R Meta_L
+add     mod4        = Super_L Super_R Hyper_L
