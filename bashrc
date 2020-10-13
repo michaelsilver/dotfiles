@@ -13,7 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ls="ls -G"
 
     # aliases to shorten paths
-    alias gh='cd ~/Documents/GitHub/'
+    alias hh='cd ~/Documents/GitHub/'
 
     # Useful tricks:
     alias d='mv ~/Downloads/* ./'
@@ -54,9 +54,7 @@ if [ "$(uname)" == "Darwin" ]; then
     export PATH=~/.scripts:$PATH
 
     # brew autocompletion
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
-    fi
+    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
     # Python virtualenvs
     # ensure all new environments are isolated from the site-packages directory
@@ -179,10 +177,10 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 #THIS COMMENT LINE IS IMPORTANT - make sure to copy this too
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/michaelsilver/google-cloud-sdk/path.bash.inc' ]; then source '/Users/michaelsilver/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/michaelsilver/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'; fi
 
 # Go
 if command -v go >/dev/null; then
