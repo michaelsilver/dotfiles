@@ -78,6 +78,9 @@ if [ "$(uname)" == "Darwin" ]; then
     # Go
     export GOROOT="$(brew --prefix)/opt/go/libexec"
 
+    # Ruby
+    export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform
     export LS_COLORS="di=33:ln=32:so=31;1:pi=31;1:ex=35:bd=36:cd=36;1:su=35;1:sg=35;1:tw=33;1:ow=33;1"
