@@ -57,8 +57,6 @@ if [ "$(uname)" == "Darwin" ]; then
     [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
     # Python virtualenvs
-    # ensure all new environments are isolated from the site-packages directory
-    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
     # use the same directory for virtualenvs as virtualenvwrapper
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     # makes pip detect an active virtualenv and install to it
