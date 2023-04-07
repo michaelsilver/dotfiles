@@ -47,7 +47,7 @@ if [ "$(uname)" == "Darwin" ]; then
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
     # PATH for brew
-    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    eval "$(/usr/local/bin/brew shellenv)"
     export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
     # Extra scripts
