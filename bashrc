@@ -188,3 +188,4 @@ if command -v go >/dev/null; then
     export GOPATH="${HOME}/.go"
     export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 fi
+. "$HOME/.cargo/env"
