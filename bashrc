@@ -47,7 +47,12 @@ if [ "$(uname)" == "Darwin" ]; then
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
     # PATH for brew
-    eval "$(/usr/local/bin/brew shellenv)"
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
+
     export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
     # Extra scripts
@@ -63,6 +68,8 @@ if [ "$(uname)" == "Darwin" ]; then
     export PIP_RESPECT_VIRTUALENV=true
     if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
         source /usr/local/bin/virtualenvwrapper.sh
+    elif [[ -r /opt/homebrew/bin/virtualenvwrapper.sh ]]; then
+        source /opt/homebrew/bin/virtualenvwrapper.sh
     else
         echo "WARNING: Can't find virtualenvwrapper.sh"
     fi
