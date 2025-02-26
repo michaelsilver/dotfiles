@@ -66,10 +66,10 @@ if [ "$(uname)" == "Darwin" ]; then
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     # makes pip detect an active virtualenv and install to it
     export PIP_RESPECT_VIRTUALENV=true
-    if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
-        source /usr/local/bin/virtualenvwrapper.sh
-    elif [[ -r /opt/homebrew/bin/virtualenvwrapper.sh ]]; then
+    if [[ -r /opt/homebrew/bin/virtualenvwrapper.sh ]]; then
         source /opt/homebrew/bin/virtualenvwrapper.sh
+    elif [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
     else
         echo "WARNING: Can't find virtualenvwrapper.sh"
     fi
